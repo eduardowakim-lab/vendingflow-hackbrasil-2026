@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#101b24" />
+    <meta name="description" content="VendingFlow: demonstração de operação e automação de uma máquina de vendas com quatro compartimentos." />
+    <title>VendingFlow | Automação de vending machine</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="#inicio" aria-label="VendingFlow, início"><span class="brand-mark">V</span><span>VendingFlow</span></a>
+      <nav aria-label="Navegação principal">
+        <a href="#comprar">Comprar</a>
+        <a href="#operacao">Operação</a>
+        <a href="#como-funciona">Como funciona</a>
+      </nav>
+      <span class="demo-pill">DEMO SIMULADA</span>
+    </header>
+
+    <main id="inicio">
+      <section class="hero shell">
+        <div class="hero-copy">
+          <p class="eyebrow">HACK BRASIL 2026 · LOGÍSTICA & AUTOMAÇÃO</p>
+          <h1>Uma máquina de vendas. <em>Operação visível.</em></h1>
+          <p class="lead">Da escolha do produto à liberação do compartimento, o VendingFlow mostra o estado da venda, o estoque e a execução da máquina em uma única tela.</p>
+          <div class="hero-actions"><a class="primary" href="#comprar">Experimentar a demo <span aria-hidden="true">↗</span></a><a class="text-link" href="#como-funciona">Entender o fluxo</a></div>
+          <p class="hero-note">Pagamentos e motores são simulados nesta demonstração. Nenhum valor é cobrado.</p>
+        </div>
+        <div class="machine-visual" aria-hidden="true">
+          <div class="machine-top"><span>VF-001</span><span class="green-led"></span></div>
+          <div class="machine-window"><div>01 <span>🥤</span></div><div>02 <span>🍫</span></div><div>03 <span>🥨</span></div><div>04 <span>💧</span></div></div>
+          <div class="machine-display">PRONTA PARA VENDER</div>
+          <div class="machine-slot"></div>
+        </div>
+      </section>
+
+      <section class="status-strip" aria-label="Estado da operação">
+        <div class="shell status-grid"><div><span class="status-label">MÁQUINA</span><strong id="machine-status">Online</strong></div><div><span class="status-label">ESTOQUE TOTAL</span><strong id="total-stock">—</strong></div><div><span class="status-label">VENDAS NA DEMO</span><strong id="sales-count">—</strong></div><div><span class="status-label">COMANDOS PENDENTES</span><strong id="pending-count">—</strong></div></div>
+      </section>
+
+      <section id="comprar" class="section shell">
+        <div class="section-heading"><div><p class="eyebrow">01 / EXPERIÊNCIA DE COMPRA</p><h2>Escolha um produto</h2><p>Selecione um compartimento e acompanhe a liberação em tempo real.</p></div><span class="section-tag">4 COMPARTIMENTOS</span></div>
+        <div id="products" class="product-grid" aria-live="polite"></div>
+        <div class="notice" role="note"><strong>Ambiente de teste</strong><span>“Confirmar compra” simula aprovação do pagamento e gera um comando de liberação. Sem Pix, cartão ou cobrança real.</span></div>
+      </section>
+
+      <section id="operacao" class="section section-dark">
+        <div class="shell">
+          <div class="section-heading"><div><p class="eyebrow">02 / PAINEL DO OPERADOR</p><h2>Cada venda tem um estado claro</h2><p>Veja pedidos, comandos e estoque sem depender de uma máquina física nesta demo.</p></div><button id="reset-demo" class="ghost" type="button">Reiniciar demo</button></div>
+          <div class="ops-grid">
+            <div class="panel"><div class="panel-head"><h3>Controles da máquina</h3><span id="connection-badge" class="badge online">ONLINE</span></div><p>Desconecte para testar a fila de comandos. Ao reconectar, os pedidos pendentes são processados.</p><button id="toggle-machine" class="secondary" type="button">Simular desconexão</button><button id="restock-all" class="secondary" type="button">Repor estoque</button></div>
+            <div class="panel"><div class="panel-head"><h3>Estoque por compartimento</h3><span class="badge subtle">UNIDADES</span></div><div id="stock-list" class="stock-list"></div></div>
+          </div>
+          <div class="panel activity"><div class="panel-head"><h3>Eventos recentes</h3><span class="badge subtle">ATUALIZAÇÃO LOCAL</span></div><ol id="event-list" aria-live="polite"></ol></div>
+        </div>
+      </section>
+
+      <section id="como-funciona" class="section shell">
+        <p class="eyebrow">03 / SOLUÇÃO</p><h2>Do pedido à entrega</h2>
+        <div class="steps"><div><span>01</span><h3>Seleção</h3><p>O cliente escolhe um item com estoque disponível.</p></div><div><span>02</span><h3>Confirmação</h3><p>A aprovação do pagamento é simulada. Em produção, seria validada pelo provedor antes de liberar o motor.</p></div><div><span>03</span><h3>Comando</h3><p>A máquina recebe um comando único. Se estiver offline, o comando espera na fila.</p></div><div><span>04</span><h3>Confirmação física</h3><p>A demo simula o ACK do compartimento e atualiza o estoque apenas depois da liberação.</p></div></div>
+        <div class="about"><div><p class="eyebrow">PROBLEMA</p><h3>Venda e operação desconectadas geram falhas difíceis de rastrear.</h3></div><p>O VendingFlow demonstra um fluxo observável para máquinas autônomas: pedido, fila, execução, confirmação e estoque. O protótipo foi construído durante o Hack Brasil 2026. A ideia foi inspirada em uma máquina ESP32 anterior do autor; nenhum código ou histórico desse produto foi importado.</p></div>
+      </section>
+    </main>
+    <footer class="footer"><div class="shell"><strong>VendingFlow</strong><span>Protótipo independente · Hack Brasil 2026 · Sem pagamentos reais</span></div></footer>
+
+    <dialog id="checkout-dialog" aria-labelledby="dialog-title"><form method="dialog"><button class="close" aria-label="Fechar" value="cancel">×</button></form><div id="dialog-content"></div></dialog>
+    <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  </body>
+</html>
