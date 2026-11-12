@@ -40,6 +40,6 @@ O código deste protótipo é disponibilizado sob a licença MIT (veja `LICENSE`
 | Trabalho anterior | A máquina física e a ideia são anteriores. O software desta entrega é novo; o projeto anterior é citado acima, sem arquivos ou histórico importados. |
 | Código acessível | HTML, CSS e JavaScript sem dependências, com instruções de teste acima e licença MIT. |
 | Demo pública | https://eduardowakim-lab.github.io/vendingflow-hackbrasil-2026/ — funciona em HTTPS, sem conta, e usa dados e pagamentos simulados. |
-| Vídeo obrigatório | A ser adicionado à submissão final: até 3 minutos, acesso sem login e demonstração do produto funcionando. |
+| Vídeo obrigatório | [Demonstração guiada de 58 segundos](https://eduardowakim-lab.github.io/vendingflow-hackbrasil-2026/vendingflow-demo-hackbrasil.mp4), com capturas da demo pública: compra simulada, fila, ACK, estoque e reconexão. O arquivo também está neste repositório. |
 
-Esta seção documenta fatos verificáveis; ela não substitui a conferência do regulamento pelos organizadores ou o vídeo exigido na submissão.
+O vídeo é uma sequência legendada de capturas reais da **demo web**; não é uma gravação da máquina física nem da integração entre software e hardware. Esta seção documenta fatos verificáveis e não substitui a conferência do regulamento pelos organizadores.
