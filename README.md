@@ -2,7 +2,7 @@
 
 Protótipo de automação de uma vending machine para a trilha **Logística & automação**. O problema é a falta de visibilidade entre venda, comando para a máquina, confirmação de liberação e atualização de estoque. Quando esses estados ficam desconectados, pedidos pagos podem se perder ou o estoque pode divergir.
 
-O autor já construiu uma máquina física com peças impressas em 3D usando seu kit Arduino, em funcionamento em lavanderias. Essa experiência real motivou o protótipo de software apresentado aqui. **A demo web simula a máquina e não está conectada ao equipamento em operação.**
+O autor já construiu uma máquina física com peças impressas em 3D usando seu kit Arduino, em funcionamento em lavanderias. Segundo o autor, a produção completa dessa máquina custou cerca de **R$ 1.000**, incluindo os componentes. Ele considera esse custo baixo em comparação com máquinas comerciais atuais; os preços de mercado variam conforme modelo e capacidade. Essa experiência real motivou o protótipo de software apresentado aqui. **A demo web simula a máquina e não está conectada ao equipamento em operação.**
 
 O VendingFlow reúne esse fluxo em uma demonstração interativa. O cliente escolhe um dos quatro produtos, confirma uma compra **simulada** e acompanha o comando. O operador pode desconectar a máquina para ver a fila de comandos e reconectá-la para retomar o processamento. O estoque só baixa depois do ACK simulado do motor. Um painel mostra vendas, fila, estado da máquina e eventos recentes.
 
