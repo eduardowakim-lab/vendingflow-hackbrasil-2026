@@ -30,3 +30,16 @@ Esta versão testa a experiência e o fluxo de estados sem hardware. Uma integra
 A ideia partiu da experiência do autor com sua máquina física em lavanderias e do projeto público anterior, [maquina-vending-esp32](https://github.com/eduardowakim-lab/maquina-vending-esp32), criado antes do Hack Brasil. Este repositório é um protótipo novo de software, escrito durante o evento. Nenhum arquivo, código ou histórico de commits do projeto anterior foi importado. O projeto anterior permanece intacto e não é o repositório entregue à competição.
 
 O código deste protótipo é disponibilizado sob a licença MIT (veja `LICENSE`). A demo é ilustrativa: não coleta dados pessoais e não processa pagamentos reais.
+
+## Evidências para avaliação
+
+| Exigência | Evidência nesta entrega |
+| --- | --- |
+| Trilha principal | Logística & automação: fila de comandos, confirmação de liberação e controle de estoque para operadores de máquinas autônomas. |
+| Repositório criado durante o evento | Este repositório público foi criado após 4/11/2026 às 21h; seus commits começaram durante o Hack Brasil 2026. |
+| Trabalho anterior | A máquina física e a ideia são anteriores. O software desta entrega é novo; o projeto anterior é citado acima, sem arquivos ou histórico importados. |
+| Código acessível | HTML, CSS e JavaScript sem dependências, com instruções de teste acima e licença MIT. |
+| Demo pública | https://eduardowakim-lab.github.io/vendingflow-hackbrasil-2026/ — funciona em HTTPS, sem conta, e usa dados e pagamentos simulados. |
+| Vídeo obrigatório | A ser adicionado à submissão final: até 3 minutos, acesso sem login e demonstração do produto funcionando. |
+
+Esta seção documenta fatos verificáveis; ela não substitui a conferência do regulamento pelos organizadores ou o vídeo exigido na submissão.
